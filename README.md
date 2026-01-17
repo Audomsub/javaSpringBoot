@@ -18,3 +18,22 @@ services:
       - ./script:/docker-entrypoint-initdb.d
     networks:
       - local-network
+
+
+------------------------------------------------
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: appusr
+    password: P@ssw0rd
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
