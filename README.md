@@ -1,1 +1,20 @@
 website form caombodia this is cambodian
+
+
+docker-compose----
+services:
+  ## POSTGRESQL
+  postgresql:
+    image: postgres:latest
+    restart: always
+    shm_size: 128mb
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: P@ssw0rd
+      POSTGRES_USER: appusr
+    volumes:
+      # - ./volume/postgresql:/var/lib/postgresql/data
+      - ./script:/docker-entrypoint-initdb.d
+    networks:
+      - local-network
