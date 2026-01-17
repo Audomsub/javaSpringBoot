@@ -78,3 +78,16 @@ spring:
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+
+--------------------sql----------------------
+
+CREATE TABLE public.student (
+ id BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL,
+ "name" varchar(255) NOT NULL,
+ score int4 NOT NULL,
+ student_id varchar(255) not null,
+ grade varchar(255) not null,
+ CONSTRAINT student_pkey PRIMARY KEY (id)
+);
